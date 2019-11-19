@@ -15,5 +15,10 @@
     "concurrently": "^5.0.0"
   },
   "proxy": "http://localhost:3000/",
-  "secure": false
+  "secure": false,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "lodash-es": "^4.17.15",
+    "querystring": "^0.2.0"
+  }
 }

@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter as Router } from "react-router-dom";
-
-import HomeScreen from "./Screens/HomeScreen/index";
+import HomeScreen from "../src/Screens/HomeScreen/index";
 class App extends Component {
   render() {
     return (

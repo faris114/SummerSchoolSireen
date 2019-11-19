@@ -1,0 +1,9 @@
+.inputStyle {
+  background: url(../../../public/assets/English4ULogo1.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding-left: 5px;
+  height: 100px;
+  background-position-x: right;
+  background-position-y: bottom;
+}

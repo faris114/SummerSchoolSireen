@@ -1,0 +1,67 @@
+@media screen and (min-width: 800px) {
+  .divHover {
+    transition: transform 0.5s;
+    width: 100px;
+    height: 100px;
+    margin: 100px;
+  }
+  .divHover:hover {
+    transform: scale3d(2, 2, 2);
+    text-size-adjust: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .textZoom {
+    transition: transform 0.6s;
+    transform: scale3d(2, 2, 2);
+    letter-spacing: 10px;
+    color: rgb(18, 20, 165);
+    color: linear-gradient(
+      90deg,
+      rgba(18, 20, 165, 1) 20%,
+      rgba(237, 25, 59, 1) 80%
+    );
+  }
+
+  .yearsContainer {
+    display: flex;
+    overflow: scroll;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .imageContainer {
+    height: 100px;
+    width: 100px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .yearsContainer {
+    display: flex;
+    padding-bottom: 200px;
+    max-width: 360px;
+    overflow-y: scroll;
+    max-height: 360px;
+  }
+  .divHover {
+    text-align: center;
+    padding-right: 300px;
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+  .textZoom {
+    transition: transform 1.5s;
+    transform: scale3d(2, 2, 2);
+    margin-bottom: 10px;
+    font-family: "Times New Roman", Times, serif;
+  }
+  #visible {
+    transition: transform 0.8s;
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  .imageContainer {
+    height: 200px;
+    width: 150px;
+  }
+}
