@@ -33,7 +33,7 @@ export default function Galleryy() {
           key={index}
           id={visible ? "visible" : null}
           className="divHover"
-          onMouseOver={(() => setTextZoom(index), console.log("horororor"))}
+          onMouseOver={() => setTextZoom(index)}
           onMouseOut={() => setTextZoom(null)}
         >
           <h1 className={index === textZoom && "textZoom"}>{year++}</h1>
@@ -45,7 +45,6 @@ export default function Galleryy() {
           >
             <VisibilitySensor
               onChange={isVisble => {
-                console.log(isVisble);
                 setVisible(isVisble);
                 setTextZoom(index);
               }}

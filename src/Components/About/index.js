@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import AboutArabic from "../../../public/Languages/Arabic";
 import "./styles.css";
-export default function About() {
+export default function About(props) {
   const [opacity, setOpacity] = useState("sireen");
   const incOpacity = whoIsIt => {
     setOpacity(whoIsIt);
   };
+  console.log(props.navbarState);
   return (
     <Container id="about">
       <h1>about</h1>
-      {console.log(opacity)}
       <div className="container">
-        <div id={opacity === "sireen" && "opacity"} className="innerContainer">
+        <div
+          id={!props.navbarState && opacity === "sireen" ? "opacity" : null}
+          className="innerContainer"
+        >
           <button className="button" onClick={() => incOpacity("sireen")}>
             <div className="imgContainer">
               <img
@@ -24,16 +28,13 @@ export default function About() {
               />
             </div>
 
-            <p>
-              ooooooooooooooo kkkkkkkkkkkkkkkkkkk ooooooooooooosdopasf
-              safokasofkasopkfoas asofkasofkasofk asokfpoaskfpsaofksaopfka
-              asofkpasfopaskfpaso ofkopaskfopasf aospkfaspaposfksp
-              ofkakpasofasdfosdkgds saopfkosafkoasofkosa aspofpoafkskfsaopo
-              pkafspokaffaksoakop
-            </p>
+            <p>ooooooooooooooo</p>
           </button>
         </div>
-        <div id={opacity === "faris" && "opacity"} className="innerContainer">
+        <div
+          id={!props.navbarState && opacity === "faris" ? "opacity" : null}
+          className="innerContainer"
+        >
           <button onClick={() => incOpacity("faris")} className="button">
             <div className="imgContainer">
               <img
@@ -45,13 +46,7 @@ export default function About() {
                 height={"100%"}
               />
             </div>
-            <p>
-              ooooooooooooooo kkkkkkkkkkkkkkkkkkk ooooooooooooosdopasf
-              safokasofkasopkfoas asofkasofkasofk asokfpoaskfpsaofksaopfka
-              asofkpasfopaskfpaso ofkopaskfopasf aospkfaspaposfksp
-              ofkakpasofasdfosdkgds saopfkosafkoasofkosa aspofpoafkskfsaopo
-              pkafspokaffaksoakop
-            </p>
+            <p>ooooooooooooooo </p>
           </button>
         </div>
       </div>

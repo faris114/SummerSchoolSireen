@@ -23,7 +23,7 @@ export default class HomeScreen extends Component {
           navbarState={this.state.navbarOpen}
           handleNavbar={this.handleNavbar}
         />
-        <About />
+        <About navbarState={this.state.navbarOpen} />
         <Contact />
         <Places />
         <Why />
