@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import ThankYou from "../../../public/assets/ThankYou.png";
 import styled from "styled-components";
-import Rotate from "react-reveal/Rotate";
 import LightSpeed from "react-reveal/LightSpeed";
-import { useHistory } from "react-router-dom";
-import HomeScreen from "../../Screens/HomeScreen/index";
 import "./styles.css";
 export default class Contact extends Component {
   state = {
@@ -34,81 +31,112 @@ export default class Contact extends Component {
     if (!this.state.toggleImage) {
       return (
         <LightSpeed right>
-          <Container id="contact">
-            <h1>Contact us</h1>
+          <FormContainer id="contact">
             <form onSubmit={this.handleSubmit}>
-              <FormContainer>
+              <div style={{ textAlign: "center" }}>
+                <h1>Contact us</h1>
+              </div>
+              <SpaceBetween>
+                <div className="text-style">Name:</div>
                 <div>
-                  Name:
                   <input
+                    className="input-style"
                     type="text"
-                    style={{ borderRadius: "1px", height: "30px" }}
                     value={this.state.name}
                     name="name"
                     onChange={this.handleChange}
                   />
                 </div>
-                Phone number:
+              </SpaceBetween>
+              <SpaceBetween>
+                <div className="text-style">
+                  Phone
+                  <br /> number:
+                </div>
                 <input
+                  className="input-style"
                   type="text"
                   placeholder="insert phone please"
-                  style={{ borderRadius: "1px", height: "30px" }}
                   value={this.state.phone}
                   name="phone"
                   onChange={this.handleChange}
                 />
-                <div className="msgContainer">
-                  Massage:
-                  <textarea
-                    name="Text1"
-                    className="inputStyle"
-                    type="text"
-                    value={this.state.msg}
-                    name="msg"
-                    onChange={this.handleChange}
-                  ></textarea>
-                </div>
-                <div style={{ alignSelf: "center" }}>
-                  <input type="submit" name="Submit" />
-                </div>
-              </FormContainer>
+              </SpaceBetween>
+              <SpaceBetween style={{ alignItems: "end" }}>
+                <div className="text-style"> Massage:</div>
+                <textarea
+                  name="Text1"
+                  className="text-area"
+                  type="text"
+                  value={this.state.msg}
+                  name="msg"
+                  onChange={this.handleChange}
+                ></textarea>
+              </SpaceBetween>
+              <ButtonDiv>
+                <input className="button-style" type="submit" name="Submit" />
+              </ButtonDiv>
             </form>
-          </Container>
+          </FormContainer>
         </LightSpeed>
       );
     } else
       return (
-        <Container>
+        <Image>
           <LightSpeed left>
-            <h1></h1>
-            <div>
-              <img src={ThankYou} alt="Logo" />
-            </div>
+            <img className="thank-you" src={ThankYou} alt="Logo" />
           </LightSpeed>
-        </Container>
+        </Image>
       );
   }
 }
 
-const Container = styled.div`
-  height: 500px;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 10px;
-  margin-top: 50px;
-  padding: 10px;
-  border-style: outset;
-  border-width: 1px;
-`;
+// const Container = styled.div`
+//   height: 500px;
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   padding: 10px;
+//   border-style: outset;
+//   border-width: 1px;
+// `;
 
 const FormContainer = styled.div`
-  display:flex;
-  justify-content:space-around;
-  flex-direction: column;
-  margin: 10px;
-  padding:10px
-  height: 200px;
-  max-width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: auto 10vw;
+  padding: 1vw;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  box-shadow: 7px 7px 18px 0px black;
+  @media (min-width: 600px) {
+    margin: auto 
+    padding: 1vw;
+    width: 35%;
+  }
+`;
+
+const Image = styled.div`
+  border-style: solid;
+  border-width: 1px;
+  padding: 1vw;
+  margin: 3vw;
+  box-shadow: 3px 7px 8px 0px black;
+`;
+const SpaceBetween = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 3vw;
+  align-items: flex-end;
+  @media (min-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw;
+  }
+`;
+const ButtonDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 3vw;
 `;

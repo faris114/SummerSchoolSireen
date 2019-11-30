@@ -1,0 +1,28 @@
+.img {
+  height: 500px;
+  width: 100%;
+}
+.title {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.description {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+#zoom {
+  transition: 0.5s;
+  transform: scale3d(1.2, 1.2, 1.2);
+  background-color: rgba(0, 0, 0, 0.5)}
+#move-h1 {
+  transition: 0.5s;
+  margin-bottom: 100px;
+}
+.opacity {
+}

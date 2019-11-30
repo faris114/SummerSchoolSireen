@@ -5,7 +5,6 @@ import { useSpring, animated } from "react-spring";
 
 const CollapseMenu = props => {
   const { open } = useSpring({ open: props.navbarState ? 0 : 1 });
-  console.log(open, "hello open");
   if (props.navbarState === true) {
     return (
       <CollapseWrapper

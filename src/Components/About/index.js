@@ -7,7 +7,6 @@ export default function About(props) {
   const incOpacity = whoIsIt => {
     setOpacity(whoIsIt);
   };
-  console.log(props.navbarState);
   return (
     <Container id="about">
       <h1>about</h1>

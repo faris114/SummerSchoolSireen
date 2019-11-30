@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import About from "../../Components/About/index";
 import Contact from "../../Components/Contact/index";
 import Places from "../../Components/Places/index";
@@ -12,6 +12,15 @@ export default class HomeScreen extends Component {
   state = {
     navbarOpen: false
   };
+  handleScroll = () => {
+    this.setState({ navbarOpen: false });
+  };
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
   handleNavbar = () => {
     this.setState({ navbarOpen: !this.state.navbarOpen });
   };

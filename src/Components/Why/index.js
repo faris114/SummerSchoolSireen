@@ -7,8 +7,8 @@ export default function Why() {
     <Zoom>
       <div id="why">
         <Container>
-          <h1>Why us </h1>
-          <p style={{ fontSize: "15px", margin: "10px" }}>
+          <H1>Why us </H1>
+          <Parag>
             We have long-standing  experience  and multiple skills for
             substantiating our goals through locating the best choices. Helping
             students to come become independent and self-confident as a result
@@ -17,7 +17,7 @@ export default function Why() {
             .this is our credibility.students will be carefully supervised and
             attended to. attending to student's feeling and psychological
             condition
-          </p>
+          </Parag>
         </Container>
       </div>
     </Zoom>
@@ -35,57 +35,15 @@ const Container = styled.div`
   border-style: outset;
   border-width: 1px;
 `;
-
-// const container = () => {
-//   console.log("before");
-//   useSpring({
-//     transition: "transform 1.2s",
-//     background: "#2d3436",
-//     transform: "scale(1.2)"
-//   });
-//   console.log("after");
-// };
-// var width = window.innerWidth;
-// var height = window.innerHeight;
-
-// const [props, set, stop] = useSpring(() =>
-
-//   window.addEventListener("scroll", function() {
-//     console.log("hlhlhl");
-//   })
-// );
-
-// Update spring with new props
-// set({ opacity: toggle ? 1 : 0 });
-// Stop animation
-// stop();
-// const zoomAnimation = useSpring({
-//   from: { transform: "translate3d(0, 30px, 0)", opacity: 0 },
-//   to: { transform: "translate3d(0, 0, 0)", opacity: 1 },
-//   delay: 800
-// });
-
-// useEffect(() => {
-//   window.addEventListener("scroll", function() {
-//     console.log("hlhlhl");
-//   }); // code to run on component mount
-// });
-
-//:hover{
-// transition: transform 1.2s;
-//transform: scale(1.2);
-//}
-
-// useEffect(() => {
-//   const ros = document.getElementById("why");
-//   console.log(ros, "hello window");
-//   ros.addEventListener("scroll", function() {
-//     const toggledStyle = {
-//       transition: "transform 1.2s",
-//       background: "#2d3436",
-//       transform: "scale(1.5)"
-//     };
-//     toggleZoom(toggledStyle);
-//   });
-//   toggleZoom(null);
-// });
+const H1 = styled.h1`
+  text-shadow: -4px 8px 6px #cebace;
+  font-family: "Times New Roman", Times, serif;
+`;
+const Parag = styled.p` 
+font-size: 18px;
+    margin: auto auto
+    font-family: "Times New Roman", Times, serif;
+    color: #444444;
+background: #FFFFFF;
+text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+`;
