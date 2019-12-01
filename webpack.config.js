@@ -14,8 +14,8 @@ module.exports = {
         use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-        use: ["url-loader?limit=100000"]
+        test: /\.(png|jpg|jpeg|gif)$/,
+        loader: "file-loader"
       }
     ]
   },
@@ -23,7 +23,6 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"]
   },
   output: {
-    path: path.resolve(__dirname, "/dist"),
     publicPath: "/dist",
     filename: "bundle.js"
   },
@@ -44,18 +43,30 @@ module.exports = {
   }
 };
 
-// loaders: [
-// {
-//     test: /.jsx?$/,
-//     loader: "babel-loader",
-//     exclude: /node_modules/
-//   },
+// use: [
+//   "file-loader",
 //   {
-//     test: /\.css$/,
-//     loader: "style-loader!css-loader"
-//   },
-//   {
-//     test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-//     loader: "url-loader?limit=100000"
+//     loader: "image-webpack-loader",
+//     options: {
+//       bypassOnDebug: true, // webpack@1.x
+//       disable: true // webpack@2.x and newer
+//     }
 //   }
-// ],
+// ]
+
+// {
+
+// }
+
+// test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+// use: [
+//   "url-loader?limit=100000",
+//   "file-loader",
+//   {
+//     loader: "image-webpack-loader",
+//     options: {
+//       bypassOnDebug: true, // webpack@1.x
+//       disable: true // webpack@2.x and newer
+//     }
+//   }
+// ]
