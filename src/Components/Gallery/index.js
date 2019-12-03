@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import images from "../../../public/assets/import";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import "./styles.css";
@@ -15,6 +14,13 @@ export default function Galleryy() {
   useEffect(() => {
     imgRef.current.focus();
   }, [imgRef]);
+
+  const importImages = () => {
+    return import("../../../public/assets/import").catch(error => {
+      return error;
+    });
+  };
+  console.log(importImages(), "hello images");
   const handleImages = () => {
     return images.map((currentImage, index) => {
       return (
@@ -24,7 +30,6 @@ export default function Galleryy() {
       );
     });
   };
-
   const handleYearsContainer = () => {
     let year = 2010;
     return Array.from({ length: 10 }).map((currentContainer, index) => {
@@ -51,7 +56,9 @@ export default function Galleryy() {
             >
               <div ref={imgRef} className="imageContainer">
                 <img
-                  src={images[index]}
+                  src={importImages().then(images => {
+                    return images[index];
+                  })}
                   width={"100%"}
                   height={"100%"}
                   style={{ borderRadius: "20%" }}
@@ -88,3 +95,13 @@ export default function Galleryy() {
       </div>
     );
 }
+
+// const handleImages = () => {
+//   return images.map((currentImage, index) => {
+//     return (
+//       <div key={index}>
+//         <img src={currentImage} ref={imgRef} width={"100%"} height={"100%"} />
+//       </div>
+//     );
+//   });
+// };

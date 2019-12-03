@@ -15,7 +15,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
-        loader: "file-loader"
+        use: ["url-loader?limit=100000"]
       }
     ]
   },
@@ -24,6 +24,7 @@ module.exports = {
   },
   output: {
     publicPath: "/dist",
+    chunkFilename: "assetsBundle.js",
     filename: "bundle.js"
   },
   devServer: {
